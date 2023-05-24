@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.ferryops.my.id
+Host: https://ferryops.my.id
 
 # Sitemaps
-Sitemap: https://www.ferryops.my.id/sitemap.xml
+Sitemap: https://ferryops.my.id/sitemap.xml
