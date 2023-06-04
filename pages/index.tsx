@@ -38,7 +38,7 @@ export default function Home() {
             />
             <h1>Saya, Ferry Ananda Febian</h1>
             <h2>
-              Seorang "pahlawan IT" yang bisa memecahkan masalah dengan sekali
+              Seorang &quot;pahlawan IT&quot; yang bisa memecahkan masalah dengan sekali
               klik mouse
             </h2>
           </div>
