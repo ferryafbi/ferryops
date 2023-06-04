@@ -1,0 +1,99 @@
+.container {
+  min-height: 100vh;
+}
+.header {
+  flex: 0 0 auto;
+  width: auto;
+  margin: 32px;
+  display: flex;
+  padding: 8px 32px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1f1f1f;
+  color: white;
+  border-radius: 8px;
+}
+.image {
+  width: 50px;
+  object-fit: cover;
+}
+.nav {
+  gap: 16px;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+}
+.main {
+  flex: 0 0 auto;
+  width: auto;
+  height: 500px;
+  margin: 32px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  gap:16px
+}
+.main h1 {
+  font-size: larger;
+  font-weight: bold;
+}
+.tech {
+  gap: 16px;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  margin: 32px;
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  flex-direction: column;
+}
+.profile {
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.8);
+  width: 200px;
+  height: auto;
+}
+.tools {
+  display: flex;
+  gap: 16px;
+}
+.footer {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  margin: 32px;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.contact {
+  display: flex;
+  gap: 16px;
+}
+.icon-contact {
+  width: 30px;
+  height: auto;
+}
+.icon-tech {
+  width: 30px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    width: 100px;
+  }
+}
