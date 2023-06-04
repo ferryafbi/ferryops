@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../pages/styles/home.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaReact, FaLinkedin } from 'react-icons/fa'
 import {
   SiNextdotjs,
@@ -30,7 +31,7 @@ export default function Home() {
         </header>
         <main>
           <div className={styles['main']}>
-            <img
+            <Image
               alt="image"
               src="https://media.licdn.com/dms/image/D5603AQHnIrHj0bKwkg/profile-displayphoto-shrink_200_200/0/1685506674738?e=1691625600&v=beta&t=skvZVv_PdWUygOvAsNL01bRz4NNtK5ZHx8nCU7OoWm0"
               className={styles['profile']}
