@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '../pages/styles/home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -15,6 +15,23 @@ import { FiMail } from 'react-icons/fi'
 import { GiKnifeThrust } from 'react-icons/gi'
 
 export default function Home() {
+  const [quote, setQuote] = useState('')
+
+  useEffect(() => {
+    const fetchQuote = async () => {
+      try {
+        const response = await fetch('/api/quotes')
+        const data = await response.json()
+        const { q } = data[0]
+        setQuote(q)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchQuote()
+  }, [])
+
   const experiences = [
     {
       company: 'PT Media Kreasi Abadi',
@@ -66,6 +83,7 @@ export default function Home() {
               Seorang &quot;pahlawan IT&quot; yang bisa memecahkan masalah
               dengan sekali klik mouse
             </h2>
+            <h2 className={styles.quotes}>Quotes of the Day: "{quote}"</h2>
           </div>
           <div className={styles.tech}>
             <div>Tools</div>
