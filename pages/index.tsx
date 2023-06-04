@@ -15,6 +15,29 @@ import { FiMail } from 'react-icons/fi'
 import { GiKnifeThrust } from 'react-icons/gi'
 
 export default function Home() {
+  const experiences = [
+    {
+      company: 'PT Media Kreasi Abadi',
+      position: 'Full Stack Developer',
+      duration: 'Jan 2023 - Present',
+      description:
+        'Part of Magang Kampus Merdeka batch 4 (Design, implement, and test application features both on the frontend and backend).',
+    },
+    {
+      company: 'Kominfo RI',
+      position: 'Cyber Security Analyst',
+      duration: 'Aug 2022 - Jan 2023',
+      description:
+        'Part of Magang Kampus Merdeka Batch 3 (Analyzing small and medium computer networks, designing enterprise computer networks, evaluating security alerts with SIEM, publishing scientific articles, and Cisco Certified Network Associate (CCNA) certification).',
+    },
+    {
+      company: 'PT Telkom Regional VI Kalimantan',
+      position: 'Back End Developer',
+      duration: 'Apr 2022 - Jul 2022',
+      description:
+        'Part of Digistar Regional Internship (Develop bot telegram and develop web dashboard).',
+    },
+  ]
   return (
     <>
       <div className={styles['container']}>
@@ -59,6 +82,21 @@ export default function Home() {
                 <Icon key={index} className={styles['icon-tech']} />
               ))}
             </div>
+          </div>
+          <div className={styles['main-experience']}>
+            <h2>Work Experience</h2>
+            {experiences.map((experience, index) => (
+              <div key={index} className={styles['experience']}>
+                <div className={styles['experience-header']}>
+                  <h3>{experience.position}</h3>
+                  <h4>{experience.company}</h4>
+                </div>
+                <div className={styles['experience-content']}>
+                  <p className={styles['duration']}>{experience.duration}</p>
+                  <p>{experience.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </main>
         <footer className={styles.footer}>
