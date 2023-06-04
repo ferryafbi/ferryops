@@ -34,12 +34,14 @@ export default function Home() {
             <Image
               alt="image"
               src="https://media.licdn.com/dms/image/D5603AQHnIrHj0bKwkg/profile-displayphoto-shrink_200_200/0/1685506674738?e=1691625600&v=beta&t=skvZVv_PdWUygOvAsNL01bRz4NNtK5ZHx8nCU7OoWm0"
+              width={200}
+              height={200}
               className={styles['profile']}
             />
             <h1>Saya, Ferry Ananda Febian</h1>
             <h2>
-              Seorang &quot;pahlawan IT&quot; yang bisa memecahkan masalah dengan sekali
-              klik mouse
+              Seorang &quot;pahlawan IT&quot; yang bisa memecahkan masalah
+              dengan sekali klik mouse
             </h2>
           </div>
           <div className={styles.tech}>
