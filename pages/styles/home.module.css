@@ -34,7 +34,7 @@
 .main {
   flex: 0 0 auto;
   width: auto;
-  height: 500px;
+  height: auto;
   margin: 32px;
   display: flex;
   align-items: center;
@@ -138,6 +138,7 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {

@@ -55,6 +55,21 @@ export default function Home() {
         'Part of Digistar Regional Internship (Develop bot telegram and develop web dashboard).',
     },
   ]
+
+  const changeQuotes = () => {
+    const fetchQuote = async () => {
+      try {
+        const response = await fetch('/api/quotes')
+        const data = await response.json()
+        const { q } = data[0]
+        setQuote(q)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchQuote()
+  }
   return (
     <>
       <div className={styles['container']}>
@@ -83,7 +98,9 @@ export default function Home() {
               Seorang &quot;pahlawan IT&quot; yang bisa memecahkan masalah
               dengan sekali klik mouse
             </h2>
-            <h2 className={styles.quotes}>Quotes of the Day: "{quote}"</h2>
+            <h2 className={styles.quotes} onClick={changeQuotes}>
+              Quotes of the Day: "{quote}"
+            </h2>
           </div>
           <div className={styles.tech}>
             <div>Tools</div>
