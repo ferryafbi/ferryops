@@ -99,7 +99,7 @@ export default function Home() {
               dengan sekali klik mouse
             </h2>
             <h2 className={styles.quotes} onClick={changeQuotes}>
-              Quotes of the Day: "{quote}"
+              Quotes of the Day: &quot;{quote}&quot;
             </h2>
           </div>
           <div className={styles.tech}>
