@@ -14,7 +14,7 @@ import {
 import { FiMail } from 'react-icons/fi'
 import { GiKnifeThrust } from 'react-icons/gi'
 import { NextPageContext } from 'next'
-import parseUserAgent from '../pages/utils/userAgent'
+import parseUserAgent from '../pages/api/ua'
 
 interface HomeProps {
   userAgent: string
