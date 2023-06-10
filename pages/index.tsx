@@ -14,7 +14,7 @@ import {
 import { FiMail } from 'react-icons/fi'
 import { GiKnifeThrust } from 'react-icons/gi'
 import { NextPageContext } from 'next'
-import { parseUserAgent } from '../pages/utils/userAgent'
+import parseUserAgent from '../pages/utils/userAgent'
 
 export default function Home({ userAgent }: { userAgent: string }) {
   const [quote, setQuote] = useState('')
@@ -73,7 +73,7 @@ export default function Home({ userAgent }: { userAgent: string }) {
     fetchQuote()
   }
 
-  const { browser, os, device, cpu } = parseUserAgent(userAgent)
+  const { browser, os, cpu } = parseUserAgent(userAgent)
 
   return (
     <>

@@ -1,8 +1,10 @@
-import UAParser from 'ua-parser-js';
+import UAParser from 'ua-parser-js'
 
-const parser = new UAParser();
+const parser = new UAParser()
 
-export function parseUserAgent(userAgent: string) {
-  parser.setUA(userAgent);
-  return parser.getResult();
+const parseUserAgent = (userAgent: string) => {
+  parser.setUA(userAgent)
+  return parser.getResult()
 }
+
+export default parseUserAgent
