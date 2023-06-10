@@ -32,7 +32,8 @@
     "sanity": "3.11.0",
     "sanity-plugin-asset-source-unsplash": "1.0.6",
     "suspend-react": "0.0.10",
-    "swr": "2.1.5"
+    "swr": "2.1.5",
+    "ua-parser-js": "^1.0.35"
   },
   "devDependencies": {
     "@types/react": "^18.2.1",
