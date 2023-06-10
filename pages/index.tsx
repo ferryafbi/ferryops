@@ -116,7 +116,10 @@ export default function Home({ userAgent }: HomeProps) {
               sistem operasi{' '}
               <span className={styles['underline']}>{os.name}</span> dan
               arsitektur{' '}
-              <span className={styles['underline']}>{cpu.architecture}</span>.
+              <span className={styles['underline']}>
+                {cpu.architecture || 'yo nda tau'}
+              </span>
+              .
             </span>
           </div>
           <div className={styles.tech}>
