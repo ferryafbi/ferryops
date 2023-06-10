@@ -16,7 +16,11 @@ import { GiKnifeThrust } from 'react-icons/gi'
 import { NextPageContext } from 'next'
 import parseUserAgent from '../pages/utils/userAgent'
 
-export default function Home({ userAgent }: { userAgent: string }) {
+interface HomeProps {
+  userAgent: string
+}
+
+export default function Home({ userAgent }: HomeProps) {
   const [quote, setQuote] = useState('')
 
   useEffect(() => {
