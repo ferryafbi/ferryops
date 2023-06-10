@@ -13,8 +13,10 @@ import {
 } from 'react-icons/si'
 import { FiMail } from 'react-icons/fi'
 import { GiKnifeThrust } from 'react-icons/gi'
+import { NextPageContext } from 'next'
+import { parseUserAgent } from '../pages/utils/userAgent'
 
-export default function Home() {
+export default function Home({ userAgent }: { userAgent: string }) {
   const [quote, setQuote] = useState('')
 
   useEffect(() => {
@@ -70,6 +72,9 @@ export default function Home() {
 
     fetchQuote()
   }
+
+  const { browser, os, device, cpu } = parseUserAgent(userAgent)
+
   return (
     <>
       <div className={styles['container']}>
@@ -101,6 +106,14 @@ export default function Home() {
             <h2 className={styles.quotes} onClick={changeQuotes}>
               Quotes of the Day: &quot;{quote}&quot;
             </h2>
+            <span>
+              Kamu pakai browser{' '}
+              <span className={styles['underline']}>{browser.name}</span> dengan
+              sistem operasi{' '}
+              <span className={styles['underline']}>{os.name}</span> dan
+              arsitektur{' '}
+              <span className={styles['underline']}>{cpu.architecture}</span>.
+            </span>
           </div>
           <div className={styles.tech}>
             <div>Tools</div>
@@ -153,4 +166,12 @@ export default function Home() {
       </div>
     </>
   )
+}
+
+Home.getInitialProps = async (ctx: NextPageContext) => {
+  const userAgent = ctx.req?.headers['user-agent'] || ''
+
+  return {
+    userAgent,
+  }
 }

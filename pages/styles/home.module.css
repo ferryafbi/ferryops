@@ -140,6 +140,9 @@
   border-radius: 4px;
   cursor: pointer;
 }
+.underline {
+  text-decoration: underline;
+}
 
 @media (max-width: 500px) {
   .header {
