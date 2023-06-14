@@ -9,5 +9,5 @@ pesan_commit="new post ($tanggal $waktu)"
 npm run build
 git add .
 # git commit -m "$pesan_commit"
-git commit -m "add github ci/cd"
+git commit -m "add www"
 git push
