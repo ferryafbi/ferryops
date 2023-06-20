@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import styles from '../../pages/styles/home.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -6,8 +7,10 @@ import Image from 'next/image'
 import { FaLinkedin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
 import { GiKnifeThrust } from 'react-icons/gi'
+import { BsListTask } from 'react-icons/bs'
 
 export default function Apps() {
+  const router = useRouter()
   return (
     <>
       <Head>
@@ -48,8 +51,11 @@ export default function Apps() {
         </header>
         <main>
           <div className={styles['main-apps']}>
-            <div className={styles['list-apps']}>
-              {/* <Image></Image> */}
+            <div
+              className={styles['list-apps']}
+              onClick={() => router.push('/apps/pencatat-tugas')}
+            >
+              <BsListTask />
               <h1>Catat Tugas</h1>
               <span>Aplikasi pencatat tugas dengan media local storage</span>
             </div>

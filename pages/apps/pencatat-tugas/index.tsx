@@ -11,7 +11,6 @@ export default function PencatatTugas() {
   const [showMenuCategory, setShowMenuCategory] = useState(false)
   const [showEditTask, setShowEditTask] = useState(false)
   const [clickedCategoryIndex, setClickedCategoryIndex] = useState<number>()
-  const [email, setEmail] = useState<string>()
   const [newTitleTask, setNewTitleTask] = useState<string>()
   const [selectedStartDate, setSelectedStartDate] = useState<string>()
   const currentDate = new Date()
@@ -19,21 +18,9 @@ export default function PencatatTugas() {
   const month = ('0' + (currentDate.getMonth() + 1)).slice(-2)
   const date = ('0' + currentDate.getDate()).slice(-2)
 
-  const handleCloseModal = () => {
-    setShowModal(false)
-  }
-  const clickRound = () => {
-    setShowMenu(true)
-  }
-  const closeMenu = () => {
-    setShowMenu(false)
-  }
   const AddCategory = () => {
     setShowCategory(true)
     setShowModal(true)
-  }
-  const Cancel = () => {
-    setShowCategory(false)
   }
   const deleteInput = () => {
     setInputValue('')
@@ -74,10 +61,9 @@ export default function PencatatTugas() {
     name: string
     tasks: Array<{
       nameTask: string
-      levelTask: string
-      progresTask: string
       startDate: string
       endDate: string
+      descriptionTask: string
     }>
   }
 
@@ -159,7 +145,7 @@ export default function PencatatTugas() {
 
   // function add task
   const addTask = (categoryIndex: number, taskArray: Task) => {
-    const { nameTask, levelTask, progresTask, startDate, endDate } = taskArray
+    const { nameTask, startDate, endDate, descriptionTask } = taskArray
     if (!nameTask) {
       alert('nama tugas tidak boleh kosong')
       return
@@ -170,10 +156,9 @@ export default function PencatatTugas() {
 
     const task = {
       nameTask,
-      levelTask,
-      progresTask,
       startDate,
       endDate,
+      descriptionTask,
     }
 
     if (!categoryToUpdate.tasks.includes(task)) {
@@ -181,6 +166,7 @@ export default function PencatatTugas() {
     }
     setCategories(updatedCategories)
     setTitleTask('')
+    setDescriptionTask('')
     setShowTask(false)
     localStorage.setItem('categories', JSON.stringify(updatedCategories))
   }
@@ -256,10 +242,9 @@ export default function PencatatTugas() {
   // function edit task
   interface Task {
     nameTask: string
-    levelTask: string
-    progresTask: string
     startDate: string
     endDate: string
+    descriptionTask: string
   }
   const updateTask = (
     categoryIndex: number,
@@ -291,6 +276,7 @@ export default function PencatatTugas() {
 
   const closeAddCategory = () => {
     setShowCategory(false)
+    setInputValue('')
   }
   return (
     <>
@@ -311,7 +297,9 @@ export default function PencatatTugas() {
                   <div
                     className={styles['dot-menu']}
                     onClick={() => showMenuDotCategory(categoryIndex)}
-                  ></div>
+                  >
+                    edit
+                  </div>
                   {showMenuCategory ? (
                     clickedCategoryIndex === categoryIndex ? (
                       <div className={styles['dropdown-content']}>
@@ -452,13 +440,10 @@ export default function PencatatTugas() {
             <div className={styles['input-category']}>
               <input
                 type="text"
-                placeholder="nama aplikasi"
+                placeholder="tugas hari ini"
                 value={inputValue}
                 onChange={handleChange}
               />
-              <span onClick={deleteInput} className={styles['pointer']}>
-                close
-              </span>
             </div>
             <div className={styles['div-button']}>
               <button onClick={closeAddCategory} className={styles['cancel']}>
@@ -482,10 +467,124 @@ export default function PencatatTugas() {
           showTask &&
           categoryIndex === selectedCategoryIndex && (
             <div className={styles['popup']} key={categoryIndex}>
-              {/* Konten atau elemen lain di dalam popup */}
-              anjayy
+              <div className={styles['popup-task']}>
+                <h3>Tugas</h3>
+                <div className={styles['task-info']}>
+                  <h5>{category.name}</h5>
+                  <input
+                    type="text"
+                    placeholder="Nama Tugas"
+                    value={titleTask}
+                    onChange={handleChangeTitle}
+                  />
+                </div>
+
+                <div className={styles['comment']}>
+                  <button
+                    onClick={() => {
+                      const taskArray: Task = {
+                        nameTask: titleTask || '',
+                        descriptionTask: descriptionTask,
+                        startDate:
+                          selectedStartDate || year + '-' + month + '-' + date,
+                        endDate:
+                          selectedEndDate || year + '-' + month + '-' + date,
+                      }
+                      addTask(categoryIndex, taskArray)
+                    }}
+                  >
+                    Tambah
+                  </button>
+                  <button onClick={closeAddTask}>Batal</button>
+                </div>
+              </div>
             </div>
           )
+      )}
+
+      {/* modal edit task */}
+      {categories.map((category, categoryIndex) =>
+        category.tasks.map(
+          (task, taskIndex) =>
+            showEditTask &&
+            taskIndex === selectedTaskIndex &&
+            task.nameTask === selectedNameTask && (
+              <div className={styles['popup']} key={taskIndex}>
+                <div className={styles['popup-task']}>
+                  <h3>Edit Tugas</h3>
+                  <div className={styles['task-info']}>
+                    <h5>Edit Tugas : {task.nameTask}</h5>
+                    <input
+                      type="text"
+                      placeholder="Nama Tugas"
+                      value={newTitleTask}
+                      onChange={(e) => setNewTitleTask(e.target.value)}
+                    />
+                  </div>
+
+                  <div className={styles['comment']}>
+                    <button
+                      onClick={() => {
+                        const updatedTask: Task = {
+                          nameTask: newTitleTask || task.nameTask,
+                          descriptionTask: descriptionTask,
+                          startDate:
+                            selectedStartDate ||
+                            year + '-' + month + '-' + date,
+                          endDate:
+                            selectedEndDate || year + '-' + month + '-' + date,
+                        }
+                        updateTask(categoryIndex, taskIndex, updatedTask)
+                      }}
+                    >
+                      Edit
+                    </button>
+                    <button onClick={closeEditTask}>Batal</button>
+                  </div>
+                </div>
+              </div>
+            )
+        )
+      )}
+
+      {/* modal edit category */}
+      {categories.map((category, categoryIndex) =>
+        showEditCategory && categoryIndex === selectedCategoryIndex ? (
+          <div className={styles['popup']} key={categoryIndex}>
+            <div className={styles['popup-content']}>
+              <p>Edit Card</p>
+              <span>Nama Card Lama</span>
+              <div className={styles['nama-workspace']}>{category.name}</div>
+              <span>Nama Card Baru </span>
+              <div className={styles['input-category']}>
+                <input
+                  type="text"
+                  placeholder="nama board"
+                  value={newNameCategory}
+                  onChange={handleChangeNewNameCategory}
+                />
+              </div>
+              <div className={styles['div-button']}>
+                <button
+                  onClick={cancelEditCategory}
+                  className={styles['cancel']}
+                >
+                  Batal
+                </button>
+                <button
+                  onClick={() => editOldCategory(category.name, categoryIndex)}
+                  className={styles['save']}
+                >
+                  Simpan
+                </button>
+              </div>
+            </div>
+            <div className={styles['footer']}>
+              <div className={styles['footer-left']}></div>
+              <div className={styles['footer-right']}></div>
+            </div>
+          </div>
+        ) : null
       )}
     </>
   )
