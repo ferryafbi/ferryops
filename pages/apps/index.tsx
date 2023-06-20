@@ -1,24 +1,25 @@
 import React from 'react'
-import styles from '../pages/styles/home.module.css'
+import styles from '../../pages/styles/home.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaLinkedin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
 import { GiKnifeThrust } from 'react-icons/gi'
 
-export default function Home() {
+export default function Apps() {
   return (
     <>
       <Head>
-        <title>ferryops | Home</title>
-        <meta name="description" content="ferryops | blog " />
+        <title>ferryops | Apps</title>
+        <meta name="description" content="ferryops | apps " />
         <meta
           name="keywords"
           content="ferry ananda febian, software engineer, next.js, react.js"
         />
         <meta name="author" content="admin ganteng" />
         <meta property="og:title" content="Beranda" />
-        <meta property="og:description" content="ferryops | blog" />
+        <meta property="og:description" content="ferryops | apps" />
         <meta
           property="og:image"
           content="https://www.ferryops.my.id/img/ferry.webp"
@@ -46,10 +47,16 @@ export default function Home() {
           </div>
         </header>
         <main>
-          <div className={styles['main']}></div>
+          <div className={styles['main-apps']}>
+            <div className={styles['list-apps']}>
+              {/* <Image></Image> */}
+              <h1>Catat Tugas</h1>
+              <span>Aplikasi pencatat tugas dengan media local storage</span>
+            </div>
+          </div>
         </main>
         <footer className={styles.footer}>
-          <h1>Looking For New Adventure</h1>
+          <h1>ferryops.my.id | 2023</h1>
           <div className={styles.contact}>
             {[
               { icon: FiMail, href: 'mailto:ferry.a.febian@gmail.com' },

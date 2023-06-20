@@ -2,8 +2,8 @@
   min-height: 100vh;
 }
 .header {
-  flex: 0 0 auto;
   width: auto;
+  height: 3rem;
   margin: 32px;
   display: flex;
   padding: 8px 32px;
@@ -18,18 +18,14 @@
   object-fit: cover;
 }
 .nav {
-  gap: 16px;
-  flex: 0 0 auto;
+  gap: 32px;
   width: auto;
   height: auto;
   display: flex;
   align-items: flex-start;
 }
 .nav h1:hover {
-  border: 2px solid white;
-  border-radius: 4px;
-  width: 60px;
-  text-align: center;
+  text-decoration: underline;
 }
 .main {
   flex: 0 0 auto;
@@ -142,6 +138,36 @@
 }
 .underline {
   text-decoration: underline;
+}
+.list-apps {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-apps {
+  width: auto;
+  height: auto;
+  margin: 32px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: center;
+  padding: 32px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  gap: 16px;
+}
+.main-apps h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.list-apps:hover {
+  border: 2px solid rgb(0, 0, 0);
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {

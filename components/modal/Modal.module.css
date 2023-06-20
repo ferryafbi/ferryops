@@ -1,0 +1,104 @@
+.main {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  z-index: 1;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.size-default {
+  width: fit-content;
+  height: 100%;
+
+  padding: 12.5%;
+}
+
+.container {
+  position: relative;
+  background-color: var(--dl-color-gray-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ilustration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  background-color: #e8e5e4;
+}
+
+.clear {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear:before,
+.clear:after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background-color: #323232;
+  border-radius: 2px;
+  transition: all 0.2s ease-in;
+}
+
+.clear:before {
+  /* -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg); */
+  transform: rotate(45deg);
+  left: 7px;
+}
+.clear:after {
+  /* -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg); */
+  transform: rotate(-45deg);
+  right: 7px;
+}
+
+.clear:hover {
+  cursor: pointer;
+}
+
+.clear:hover.clear:before,
+.clear:hover.clear:after {
+  background-color: #868686;
+}
