@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.ferryops.my.id</loc><lastmod>2023-06-20T21:51:57.369Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.ferryops.my.id/apps</loc><lastmod>2023-06-20T21:51:57.369Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.ferryops.my.id/apps/pencatat-tugas</loc><lastmod>2023-06-20T21:51:57.370Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.ferryops.my.id/posts</loc><lastmod>2023-06-20T21:51:57.370Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.ferryops.my.id/resume</loc><lastmod>2023-06-20T21:51:57.370Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.ferryops.my.id/posts/daftar-perintah-umum-arch-linux-beserta-penjelasannya-bonus-review-manjaro</loc><lastmod>2023-06-20T21:51:57.370Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.ferryops.my.id/posts/contoh-api-next-js-untuk-redirect-ke-aplikasi-android</loc><lastmod>2023-06-20T21:51:57.370Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.ferryops.my.id/posts/solved-cara-install-postgresql-dan-pgadmin-di-arch-linux-or-or-manjaro</loc><lastmod>2023-06-20T21:51:57.370Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.ferryops.my.id/posts/solved-cara-mengatasi-web-browser-yang-selalu-minta-login-akun</loc><lastmod>2023-06-20T21:51:57.370Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.ferryops.my.id</loc><lastmod>2023-06-20T21:52:35.129Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.ferryops.my.id/apps</loc><lastmod>2023-06-20T21:52:35.129Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.ferryops.my.id/apps/pencatat-tugas</loc><lastmod>2023-06-20T21:52:35.129Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.ferryops.my.id/posts</loc><lastmod>2023-06-20T21:52:35.129Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.ferryops.my.id/resume</loc><lastmod>2023-06-20T21:52:35.129Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.ferryops.my.id/posts/daftar-perintah-umum-arch-linux-beserta-penjelasannya-bonus-review-manjaro</loc><lastmod>2023-06-20T21:52:35.129Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.ferryops.my.id/posts/contoh-api-next-js-untuk-redirect-ke-aplikasi-android</loc><lastmod>2023-06-20T21:52:35.129Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.ferryops.my.id/posts/solved-cara-install-postgresql-dan-pgadmin-di-arch-linux-or-or-manjaro</loc><lastmod>2023-06-20T21:52:35.129Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.ferryops.my.id/posts/solved-cara-mengatasi-web-browser-yang-selalu-minta-login-akun</loc><lastmod>2023-06-20T21:52:35.129Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
