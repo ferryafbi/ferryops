@@ -1,8 +1,8 @@
 import React, { useState, ChangeEvent, useEffect } from 'react'
 import styles from './pencatatTugas.module.css'
+import { CiEdit } from 'react-icons/ci'
 
 export default function PencatatTugas() {
-  const [showMenu, setShowMenu] = useState(false)
   const [showCategory, setShowCategory] = useState(false)
   const [showEditCategory, setShowEditCategory] = useState(false)
   const [showTask, setShowTask] = useState(false)
@@ -17,14 +17,11 @@ export default function PencatatTugas() {
   const year = currentDate.getFullYear()
   const month = ('0' + (currentDate.getMonth() + 1)).slice(-2)
   const date = ('0' + currentDate.getDate()).slice(-2)
+  const [splashScreen, setSplashScreen] = useState(false)
 
   const AddCategory = () => {
     setShowCategory(true)
     setShowModal(true)
-  }
-  const deleteInput = () => {
-    setInputValue('')
-    setNewNameCategory('')
   }
   const resetLocalStorage = () => {
     localStorage.removeItem('categories')
@@ -48,6 +45,7 @@ export default function PencatatTugas() {
   }
   const closeAddTask = () => {
     setShowTask(false)
+    setTitleTask('')
   }
 
   // function show modal edit category
@@ -133,15 +131,6 @@ export default function PencatatTugas() {
   const handleChangeTitle = (event: ChangeEvent<HTMLInputElement>) => {
     setTitleTask(event.target.value)
   }
-  const handleChangeDescription = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    setDescriptionTask(event.target.value)
-  }
-  const handleChangeEndDate = (event: ChangeEvent<HTMLInputElement>) => {
-    setSelectedEndDate(event.target.value)
-  }
-  const handleChangeStartDate = (event: ChangeEvent<HTMLInputElement>) => {
-    setSelectedStartDate(event.target.value)
-  }
 
   // function add task
   const addTask = (categoryIndex: number, taskArray: Task) => {
@@ -150,7 +139,6 @@ export default function PencatatTugas() {
       alert('nama tugas tidak boleh kosong')
       return
     }
-
     const updatedCategories = [...categories]
     const categoryToUpdate = updatedCategories[categoryIndex]
 
@@ -178,29 +166,6 @@ export default function PencatatTugas() {
       setCategories(parsedCategories)
     }
   }, [])
-
-  // handle date start
-  const [showDatePickerStart, setShowDatePickerStart] = useState(false)
-  const [dateStart, setDateStart] = useState('waktu' || '')
-  const handleDatePickerStart = () => {
-    setShowDatePickerStart(!showDatePickerStart)
-  }
-  const handleDateChangeStart = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setDateStart(event.target.value)
-  }
-
-  // handle date end
-  const [showDatePickerEnd, setShowDatePickerEnd] = useState(false)
-  const [dateEnd, setDateEnd] = useState('waktu' || '')
-  const handleDatePickerEnd = () => {
-    setShowDatePickerEnd(!showDatePickerEnd)
-  }
-
-  const handleDateChangeEnd = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setDateEnd(event.target.value)
-  }
 
   // function handle dnd task
   const handleDrop = (
@@ -298,7 +263,7 @@ export default function PencatatTugas() {
                     className={styles['dot-menu']}
                     onClick={() => showMenuDotCategory(categoryIndex)}
                   >
-                    edit
+                    <CiEdit />
                   </div>
                   {showMenuCategory ? (
                     clickedCategoryIndex === categoryIndex ? (
@@ -471,6 +436,7 @@ export default function PencatatTugas() {
                 <h3>Tugas</h3>
                 <div className={styles['task-info']}>
                   <h5>{category.name}</h5>
+                  <br />
                   <input
                     type="text"
                     placeholder="Nama Tugas"
@@ -480,6 +446,9 @@ export default function PencatatTugas() {
                 </div>
 
                 <div className={styles['comment']}>
+                  <button onClick={closeAddTask} className={styles['cancel']}>
+                    Batal
+                  </button>
                   <button
                     onClick={() => {
                       const taskArray: Task = {
@@ -492,10 +461,10 @@ export default function PencatatTugas() {
                       }
                       addTask(categoryIndex, taskArray)
                     }}
+                    className={styles['save']}
                   >
                     Tambah
                   </button>
-                  <button onClick={closeAddTask}>Batal</button>
                 </div>
               </div>
             </div>
@@ -514,6 +483,7 @@ export default function PencatatTugas() {
                   <h3>Edit Tugas</h3>
                   <div className={styles['task-info']}>
                     <h5>Edit Tugas : {task.nameTask}</h5>
+                    <br />
                     <input
                       type="text"
                       placeholder="Nama Tugas"
@@ -523,6 +493,12 @@ export default function PencatatTugas() {
                   </div>
 
                   <div className={styles['comment']}>
+                    <button
+                      onClick={closeEditTask}
+                      className={styles['cancel']}
+                    >
+                      Batal
+                    </button>
                     <button
                       onClick={() => {
                         const updatedTask: Task = {
@@ -536,10 +512,10 @@ export default function PencatatTugas() {
                         }
                         updateTask(categoryIndex, taskIndex, updatedTask)
                       }}
+                      className={styles['save']}
                     >
                       Edit
                     </button>
-                    <button onClick={closeEditTask}>Batal</button>
                   </div>
                 </div>
               </div>
@@ -586,6 +562,23 @@ export default function PencatatTugas() {
           </div>
         ) : null
       )}
+
+      {/* splash screen */}
+      {!splashScreen ? (
+        <div className={styles['popup']}>
+          <div className={styles['popup-content']}>
+            <p>Selamat datang di Aplikasi</p>
+            <p>Catat-catat tugas</p>
+            <span>
+              Disini kamu bisa menambahkan, mengedit, menghapus dan drag n drop
+              tugas
+            </span>
+            <div className={styles['button-splash-screen']}>
+              <button onClick={() => setSplashScreen(true)}>Tutup</button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </>
   )
 }

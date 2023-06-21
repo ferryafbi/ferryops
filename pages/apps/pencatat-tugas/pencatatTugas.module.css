@@ -186,13 +186,11 @@
 
 .input-category input {
   width: 100%;
-  border: none;
-  height: 65px;
-  border-radius: 10px;
-  padding: 8px;
+  border: 1px solid black;
   outline: none;
-  background-color: #f6f7f9;
-  font-size: 16px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 8px;
 }
 .div-button {
   display: flex;
@@ -205,7 +203,7 @@
   cursor: pointer;
   width: 150px;
   height: 45px;
-  font-size: 24px;
+  font-size: 20px;
   border-radius: 10px;
 }
 .save {
@@ -255,9 +253,9 @@
 }
 .task-info input {
   width: 100%;
-  border: none;
+  border: 1px solid black;
   outline: none;
-  /* background-color: #f6f7f9; */
+  background-color: #ffffff;
   border-radius: 5px;
   padding: 8px;
 }
@@ -376,7 +374,6 @@
 }
 .comment {
   display: flex;
-  flex-direction: column;
   gap: 4px;
   font-size: 16px;
   width: 100%;
@@ -392,13 +389,11 @@
   padding: 8px;
 }
 .comment button {
-  width: 80px;
-  height: 30px;
-  align-self: flex-end;
-  background-color: #d6e4fd;
-  border: none;
-  box-shadow: 0 0 0 1px #90a3bf;
-  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+  height: 45px;
+  font-size: 20px;
+  border-radius: 10px;
 }
 .task-list {
   cursor: move;
@@ -655,7 +650,35 @@
   color: #a5a5a5;
   cursor: pointer;
 }
+.button-splash-screen {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  width: 150px;
+  height: 45px;
+  font-size: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
 
 @media (max-width: 500px) {
-
+  .container-right {
+    flex-direction: column;
+    padding-left: 0;
+    align-items: center;
+  }
+  .task {
+    height: max-content;
+    width: 90%;
+    flex: 0;
+  }
+  .category {
+    width: 90%;
+    height: 50px;
+    flex: 0;
+    margin: 0;
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+  }
 }
