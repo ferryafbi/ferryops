@@ -16,6 +16,7 @@ import { GiKnifeThrust } from 'react-icons/gi'
 import { NextPageContext } from 'next'
 import parseUserAgent from '../pages/api/ua'
 import Head from 'next/head'
+import MyHeader from 'components/MyHeader'
 
 interface ResumeProps {
   userAgent: string
@@ -100,23 +101,7 @@ export default function Resume({ userAgent }: ResumeProps) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className={styles['container']}>
-        <header className={styles['header']}>
-          <GiKnifeThrust style={{ width: '30', height: 'auto' }} />
-          <div className={styles['nav']}>
-            <h1>
-              <Link href="/">Home</Link>
-            </h1>
-            <h1>
-              <Link href="/posts">Posts</Link>
-            </h1>
-            <h1>
-              <Link href="/apps">Apps</Link>
-            </h1>
-            <h1>
-              <Link href="/resume">Resume</Link>
-            </h1>
-          </div>
-        </header>
+        <MyHeader/>
         <main>
           <div className={styles['main']}>
             <Image

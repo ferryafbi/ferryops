@@ -5,7 +5,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { FaLinkedin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
-import { BsListTask } from 'react-icons/bs'
+import { BiTask } from 'react-icons/bi'
+import { AiOutlineNumber } from 'react-icons/ai'
 import MyHeader from 'components/MyHeader'
 
 export default function Apps() {
@@ -40,9 +41,17 @@ export default function Apps() {
               className={styles['list-apps']}
               onClick={() => router.push('/apps/pencatat-tugas')}
             >
-              <BsListTask />
+              <BiTask />
               <h1>Catat Tugas</h1>
               <span>Aplikasi pencatat tugas dengan media local storage</span>
+            </div>
+            <div
+              className={styles['list-apps']}
+              onClick={() => router.push('/apps/tasbih')}
+            >
+              <AiOutlineNumber />
+              <h1>Tasbih Online</h1>
+              <span>Simple tasbih online dengan counter max 33</span>
             </div>
           </div>
         </main>
