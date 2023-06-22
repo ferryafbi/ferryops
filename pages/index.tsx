@@ -34,7 +34,7 @@ export default function Home() {
           <div className={styles['main']}></div>
         </main>
         <footer className={styles.footer}>
-          <h1>Looking For New Adventure</h1>
+          <h1>ferryops.my.id | 2023</h1>
           <div className={styles.contact}>
             {[
               { icon: FiMail, href: 'mailto:ferry.a.febian@gmail.com' },

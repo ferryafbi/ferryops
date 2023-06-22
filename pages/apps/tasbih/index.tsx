@@ -7,7 +7,7 @@ export default function Tasbih() {
   const [showTasbih, setShowTasbih] = useState(false)
 
   const handleButton = () => {
-    navigator.vibrate(200)
+    navigator.vibrate(100)
     setTasbih(tasbih + 1)
     setShowTasbih(true)
     if (tasbih === 33) {
