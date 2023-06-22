@@ -685,9 +685,12 @@
   .category {
     width: 90%;
     height: 50px;
-    flex: 0;
+    flex: 0 0 auto ;
     margin: 0;
     margin-bottom: 5rem;
     margin-top: 1rem;
+  }
+  .popup-content{
+    margin: 0 32px;
   }
 }
