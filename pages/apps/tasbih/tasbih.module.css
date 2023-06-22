@@ -7,13 +7,7 @@
   width: 100%;
   padding: 0 2rem;
 }
-.main button {
-  background-color: #27374d;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  color: #dde6ed;
-}
+
 .main h3 {
   font-weight: bold;
 }
@@ -29,4 +23,20 @@
   justify-content: center;
   height: 100vh;
   font-size: 24px;
+}
+
+.main button {
+  background-color: #2f830e;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  color: #dde6ed;
+}
+
+.main button:hover {
+  background-color: #45a049;
+}
+
+.main button:active {
+  background-color: #3e8e41;
 }

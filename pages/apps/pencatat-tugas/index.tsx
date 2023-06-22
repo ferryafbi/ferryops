@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, useEffect } from 'react'
 import styles from './pencatatTugas.module.css'
 import { CiEdit } from 'react-icons/ci'
 import MyHeader from 'components/MyHeader'
+import Head from 'next/head'
 
 export default function PencatatTugas() {
   const [showCategory, setShowCategory] = useState(false)
@@ -246,6 +247,24 @@ export default function PencatatTugas() {
   }
   return (
     <>
+      <Head>
+        <title>Catat Tugas</title>
+        <meta name="description" content="ferryops | apps " />
+        <meta
+          name="keywords"
+          content="ferry ananda febian, software engineer, next.js, react.js"
+        />
+        <meta name="author" content="admin ganteng" />
+        <meta property="og:title" content="Beranda" />
+        <meta property="og:description" content="ferryops | apps" />
+        <meta
+          property="og:image"
+          content="https://www.ferryops.my.id/img/ferry.webp"
+        />
+        <meta property="og:url" content="https://www.ferryops.my.id" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
       <div className={styles['container']}>
         <div className={styles['header']}>
           <MyHeader />

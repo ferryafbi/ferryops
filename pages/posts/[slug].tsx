@@ -1,4 +1,6 @@
 import { PreviewSuspense } from '@sanity/preview-kit'
+import MyFooter from 'components/MyFooter'
+import MyHeader from 'components/MyHeader'
 import PostPage from 'components/PostPage'
 import {
   getAllPostsSlugs,
@@ -53,7 +55,13 @@ export default function ProjectSlugRoute(props: PageProps) {
     )
   }
 
-  return <PostPage post={post} morePosts={morePosts} settings={settings} />
+  return (
+    <>
+      <MyHeader />
+      <PostPage post={post} morePosts={morePosts} settings={settings} />
+      <MyFooter />
+    </>
+  )
 }
 
 export const getStaticProps: GetStaticProps<
