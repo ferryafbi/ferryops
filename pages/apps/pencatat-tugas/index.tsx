@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, useEffect } from 'react'
 import styles from './pencatatTugas.module.css'
 import { CiEdit } from 'react-icons/ci'
+import MyHeader from 'components/MyHeader'
 
 export default function PencatatTugas() {
   const [showCategory, setShowCategory] = useState(false)
@@ -246,6 +247,9 @@ export default function PencatatTugas() {
   return (
     <>
       <div className={styles['container']}>
+        <div className={styles['header']}>
+          <MyHeader />
+        </div>
         <div className={styles['container-right']}>
           {/* list category here */}
           {categories.map((category, categoryIndex) => (

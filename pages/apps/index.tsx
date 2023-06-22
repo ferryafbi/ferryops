@@ -3,11 +3,10 @@ import { useRouter } from 'next/router'
 import styles from '../../pages/styles/home.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 import { FaLinkedin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
-import { GiKnifeThrust } from 'react-icons/gi'
 import { BsListTask } from 'react-icons/bs'
+import MyHeader from 'components/MyHeader'
 
 export default function Apps() {
   const router = useRouter()
@@ -32,23 +31,9 @@ export default function Apps() {
       </Head>
 
       <div className={styles['container']}>
-        <header className={styles['header']}>
-          <GiKnifeThrust style={{ width: '30', height: 'auto' }} />
-          <div className={styles['nav']}>
-            <h1>
-              <Link href="/">Home</Link>
-            </h1>
-            <h1>
-              <Link href="/posts">Posts</Link>
-            </h1>
-            <h1>
-              <Link href="/apps">Apps</Link>
-            </h1>
-            <h1>
-              <Link href="/resume">Resume</Link>
-            </h1>
-          </div>
-        </header>
+        <div className={styles['header-nav']}>
+          <MyHeader />
+        </div>
         <main>
           <div className={styles['main-apps']}>
             <div

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { FaLinkedin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
 import { GiKnifeThrust } from 'react-icons/gi'
+import MyHeader from 'components/MyHeader'
 
 export default function Home() {
   return (
@@ -28,23 +29,7 @@ export default function Home() {
       </Head>
 
       <div className={styles['container']}>
-        <header className={styles['header']}>
-          <GiKnifeThrust style={{ width: '30', height: 'auto' }} />
-          <div className={styles['nav']}>
-            <h1>
-              <Link href="/">Home</Link>
-            </h1>
-            <h1>
-              <Link href="/posts">Posts</Link>
-            </h1>
-            <h1>
-              <Link href="/apps">Apps</Link>
-            </h1>
-            <h1>
-              <Link href="/resume">Resume</Link>
-            </h1>
-          </div>
-        </header>
+        <MyHeader />
         <main>
           <div className={styles['main']}></div>
         </main>

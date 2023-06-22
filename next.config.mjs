@@ -15,6 +15,20 @@ const config = {
     /// Set this to false if you want production builds to abort if there's lint errors
     ignoreDuringBuilds: process.env.VERCEL_ENV === 'production',
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.mp3$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          publicPath: '/_next',
+          name: 'static/media/[name].[hash].[ext]',
+        },
+      },
+    })
+
+    return config
+  },
 }
 
 export default config

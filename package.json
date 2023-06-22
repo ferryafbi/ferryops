@@ -34,7 +34,9 @@
     "sanity-plugin-asset-source-unsplash": "1.0.6",
     "suspend-react": "0.0.10",
     "swr": "2.1.5",
-    "ua-parser-js": "^1.0.35"
+    "ua-parser-js": "^1.0.35",
+    "url-loader": "^4.1.1",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.1",
@@ -43,6 +45,7 @@
     "eslint": "^8.39.0",
     "eslint-config-next": "13.4.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "file-loader": "^6.2.0",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "prettier-plugin-packagejson": "^2.4.3",
