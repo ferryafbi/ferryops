@@ -12,6 +12,7 @@ export default function Tasbih() {
     setTasbih(tasbih + 1)
     setShowTasbih(true)
     if (tasbih === 33) {
+      navigator.vibrate(700)
       setTasbih(0)
     }
   }
