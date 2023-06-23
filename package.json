@@ -2,7 +2,6 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "postbuild": "next-sitemap",
     "dev": "next",
     "format": "npx prettier --write . --ignore-path .gitignore --cache",
     "lint": "next lint -- --ignore-path .gitignore",
@@ -26,7 +25,6 @@
     "intl-segmenter-polyfill": "0.4.4",
     "next": "13.4.2",
     "next-sanity": "4.3.2",
-    "next-sitemap": "^4.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
