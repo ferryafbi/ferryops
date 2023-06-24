@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 export default function KirimPesanWa() {
   const [value, setValue] = useState<string>('')
   const [pesan, setPesan] = useState<string>('')
+  const [inputActive, setInputActive] = useState(false)
+
   const sendWhatsapp = () => {
     const pesanOriginal = pesan
     const modifiedPesan = pesanOriginal.split(' ').join('+')
@@ -15,6 +17,14 @@ export default function KirimPesanWa() {
       `https://api.whatsapp.com/send/?phone=${value}&text=${modifiedPesan}`
     )
   }
+
+  const handleChange = (e) => {
+    setValue(e.target.value)
+    setInputActive(true)
+    if (e.target.value === ""){
+      setInputActive(false)
+    }
+  }
   return (
     <div className="flex flex-col items-center justify-center">
       <MyHeader />
@@ -22,13 +32,13 @@ export default function KirimPesanWa() {
         <h1>Kirim Pesan Wa</h1>
       </div>
 
-      <div className="w-full mb-2 flex flex-col justify-center gap-4 lg:w-96 px-8">
+      <div className="mb-2 flex w-full flex-col justify-center gap-4 px-8 lg:w-96">
         <input
           type="number"
           placeholder="62"
           className="rounded-md border-2 border-solid border-sky-500 p-3 outline-none"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         />
         <textarea
           rows={5}
@@ -41,7 +51,11 @@ export default function KirimPesanWa() {
 
       <div className="flex justify-center">
         <button
-          className="h-auto w-24 rounded-full bg-slate-400 text-white hover:bg-slate-600"
+          className={`h-auto rounded-full transition ease-in-out duration-700 ${
+            inputActive
+              ? 'bg-lime-600 hover:bg-lime-500 w-32'
+              : 'bg-slate-400 text-white hover:bg-slate-600 w-16'
+          }`}
           onClick={sendWhatsapp}
         >
           Kirim
