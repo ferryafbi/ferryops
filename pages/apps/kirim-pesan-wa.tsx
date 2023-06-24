@@ -22,11 +22,11 @@ export default function KirimPesanWa() {
         <h1>Kirim Pesan Wa</h1>
       </div>
 
-      <div className="mb-2 flex flex-col justify-center gap-4">
+      <div className="w-full mb-2 flex flex-col justify-center gap-4 lg:w-96 px-8">
         <input
           type="number"
           placeholder="62"
-          className="w-96 rounded-md border-2 border-solid border-sky-500 p-3 outline-none"
+          className="rounded-md border-2 border-solid border-sky-500 p-3 outline-none"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
