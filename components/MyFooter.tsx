@@ -8,6 +8,7 @@ export default function MyFooter() {
   return (
     <footer className={styles.footer}>
       <h1>ferryops.my.id | 2023</h1>
+      <Link href={'https://www.ferryops.my.id/sitemap.xml'} className='underline text-blue-500'>sitemap</Link>
       <div className={styles.contact}>
         {[
           { icon: FiMail, href: 'mailto:ferry.a.febian@gmail.com' },
