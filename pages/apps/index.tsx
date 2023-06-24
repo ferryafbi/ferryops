@@ -53,6 +53,14 @@ export default function Apps() {
               <h1>Tasbih Online</h1>
               <span>Simple tasbih online dengan counter max 33</span>
             </div>
+            <div
+              className={styles['list-apps']}
+              onClick={() => router.push('/apps/kirim-pesan-wa')}
+            >
+              <AiOutlineNumber />
+              <h1>Kirim Pesan WA</h1>
+              <span>Aplikasi kirim pesan whatsapp tanpa perlu save nomor penerima</span>
+            </div>
           </div>
         </main>
         <footer className={styles.footer}>
