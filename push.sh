@@ -9,5 +9,5 @@ pesan_commit="new post ($tanggal $waktu)"
 npm run build
 git add .
 # git commit -m "$pesan_commit"
-git commit -m "kirim pesan wa"
+git commit -m "add sitemap and edit robots.txt"
 git push

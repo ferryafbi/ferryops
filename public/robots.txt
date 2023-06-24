@@ -1,9 +1,3 @@
-# *
 User-agent: *
-Allow: /
-
-# Host
-Host: https://www.ferryops.my.id/
-
-# Sitemaps
+Disallow: 
 Sitemap: https://www.ferryops.my.id/sitemap.xml
