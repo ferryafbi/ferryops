@@ -1,37 +1,89 @@
-import React from 'react'
-import styles from '../pages/styles/home.module.css'
-import Head from 'next/head'
-import MyHeader from 'components/MyHeader'
+import { PreviewSuspense } from '@sanity/preview-kit'
+import IndexPage from 'components/IndexPage'
 import MyFooter from 'components/MyFooter'
+import MyHeader from 'components/MyHeader'
+import { getAllPosts, getSettings } from 'lib/sanity.client'
+import { Post, Settings } from 'lib/sanity.queries'
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
+import { lazy } from 'react'
 
-export default function Home() {
+const PreviewIndexPage = lazy(() => import('components/PreviewIndexPage'))
+
+interface PageProps {
+  posts: Post[]
+  settings: Settings
+  preview: boolean
+  token: string | null
+}
+
+interface Query {
+  [key: string]: string
+}
+
+interface PreviewData {
+  token?: string
+}
+
+export default function Page(props: PageProps) {
+  const { posts, settings, preview, token } = props
+
+  if (preview) {
+    return (
+      <PreviewSuspense
+        fallback={
+          <IndexPage loading preview posts={posts} settings={settings} />
+        }
+      >
+        <PreviewIndexPage token={token} />
+      </PreviewSuspense>
+    )
+  }
+
   return (
     <>
       <Head>
         <title>ferryops | Home</title>
-        <meta name="description" content="ferryops | blog " />
+        <meta name="description" content="ferryops | home " />
         <meta
           name="keywords"
           content="ferry ananda febian, software engineer, next.js, react.js"
         />
         <meta name="author" content="admin ganteng" />
         <meta property="og:title" content="Beranda" />
-        <meta property="og:description" content="ferryops | blog" />
+        <meta property="og:description" content="ferryops | home" />
         <meta
           property="og:image"
-          content="https://ferryops.vercel.app/img/ferry.webp"
+          content="https://www.ferryops.my.id/img/ferry.webp"
         />
-        <meta property="og:url" content="https://ferryops.vercel.app" />
+        <meta property="og:url" content="https://www.ferryops.my.id" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-
-      <div className={styles['container']}>
-        <MyHeader />
-        <main>
-          <div className={styles['main']}></div>
-        </main>
-        <MyFooter />
-      </div>
+      <MyHeader />
+      <IndexPage posts={posts} settings={settings} />
+      <MyFooter />
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps<
+  PageProps,
+  Query,
+  PreviewData
+> = async (ctx) => {
+  const { preview = false, previewData = {} } = ctx
+
+  const [settings, posts = []] = await Promise.all([
+    getSettings(),
+    getAllPosts(),
+  ])
+
+  return {
+    props: {
+      posts,
+      settings,
+      preview,
+      token: previewData.token ?? null,
+    },
+  }
 }
