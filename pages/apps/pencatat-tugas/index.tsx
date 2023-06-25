@@ -259,9 +259,9 @@ export default function PencatatTugas() {
         <meta property="og:description" content="ferryops | apps" />
         <meta
           property="og:image"
-          content="https://www.ferryops.my.id/img/ferry.webp"
+          content="https://ferryops.vercel.app/img/ferry.webp"
         />
-        <meta property="og:url" content="https://www.ferryops.my.id" />
+        <meta property="og:url" content="https://ferryops.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
