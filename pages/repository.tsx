@@ -29,13 +29,12 @@ export default function Repository() {
         <div className={styles['container-github']}>
           {repos.map((repo) => (
             <div
+              key={repo.id}
               className={styles['box-github']}
               onClick={() => router.push(repo.html_url)}
             >
               <h3>
-                <Link key={repo.id} href={repo.html_url}>
-                  {repo.name}
-                </Link>
+                <Link href={repo.html_url}>{repo.name}</Link>
               </h3>
               <span>Bahasa: {repo.language}</span>
               <span>Branch: {repo.default_branch}</span>
