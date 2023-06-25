@@ -12,7 +12,6 @@ import {
   SiMysql,
 } from 'react-icons/si'
 import { FiMail } from 'react-icons/fi'
-import { GiKnifeThrust } from 'react-icons/gi'
 import { NextPageContext } from 'next'
 import parseUserAgent from '../pages/api/ua'
 import Head from 'next/head'

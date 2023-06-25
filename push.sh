@@ -9,5 +9,5 @@ pesan_commit="new post ($tanggal $waktu)"
 npm run build
 git add .
 # git commit -m "$pesan_commit"
-git commit -m "mager buat landing page"
+git commit -m "add pages repositories"
 git push

@@ -16,6 +16,9 @@ export default function MyHeader() {
           <Link href="/apps">Apps</Link>
         </h1>
         <h1>
+          <Link href="/repository">Repo</Link>
+        </h1>
+        <h1>
           <Link href="/resume">Resume</Link>
         </h1>
       </div>
