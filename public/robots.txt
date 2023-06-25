@@ -1,3 +1,9 @@
+# *
 User-agent: *
-Disallow: 
-Sitemap: https://www.ferryops.my.id/sitemap.xml
+Allow: /
+
+# Host
+Host: https://ferryops.vercel.app
+
+# Sitemaps
+Sitemap: https://ferryops.vercel.app/sitemap.xml
