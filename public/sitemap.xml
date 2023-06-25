@@ -8,43 +8,63 @@
 
 
 <url>
-  <loc>https://www.ferryops.my.id/</loc>
-  <lastmod>2023-06-24T15:13:47+00:00</lastmod>
+  <loc>https://ferryops.vercel.app/</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.ferryops.my.id/posts</loc>
-  <lastmod>2023-06-24T15:13:47+00:00</lastmod>
+  <loc>https://ferryops.vercel.app/posts</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.ferryops.my.id/apps</loc>
-  <lastmod>2023-06-24T15:13:47+00:00</lastmod>
+  <loc>https://ferryops.vercel.app/apps</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.ferryops.my.id/resume</loc>
-  <lastmod>2023-06-24T15:13:47+00:00</lastmod>
+  <loc>https://ferryops.vercel.app/pencatat-tugas</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.ferryops.my.id/posts/contoh-api-next-js-untuk-redirect-ke-aplikasi-android</loc>
-  <lastmod>2023-06-24T15:13:47+00:00</lastmod>
+  <loc>https://ferryops.vercel.app/tasbih</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ferryops.vercel.app/kirim-pesan-wa</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ferryops.vercel.app/resume</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ferryops.vercel.app/posts/blogger-sudah-jadul-waktunya-beralih-ke-modern-web</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.ferryops.my.id/posts/solved-cara-install-postgresql-dan-pgadmin-di-arch-linux-or-or-manjaro</loc>
-  <lastmod>2023-06-24T15:13:47+00:00</lastmod>
+  <loc>https://ferryops.vercel.app/posts/contoh-api-next-js-untuk-redirect-ke-aplikasi-android</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.ferryops.my.id/posts/daftar-perintah-umum-arch-linux-beserta-penjelasannya-bonus-review-manjaro</loc>
-  <lastmod>2023-06-24T15:13:47+00:00</lastmod>
+  <loc>https://ferryops.vercel.app/posts/solved-cara-install-postgresql-dan-pgadmin-di-arch-linux-or-or-manjaro</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.ferryops.my.id/posts/solved-cara-mengatasi-web-browser-yang-selalu-minta-login-akun</loc>
-  <lastmod>2023-06-24T15:13:47+00:00</lastmod>
+  <loc>https://ferryops.vercel.app/posts/daftar-perintah-umum-arch-linux-beserta-penjelasannya-bonus-review-manjaro</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ferryops.vercel.app/posts/solved-cara-mengatasi-web-browser-yang-selalu-minta-login-akun</loc>
+  <lastmod>2023-06-25T09:54:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
