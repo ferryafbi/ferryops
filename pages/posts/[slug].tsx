@@ -7,7 +7,7 @@ import {
   getPostAndMoreStories,
   getSettings,
 } from 'lib/sanity.client'
-import { Post, Settings } from 'lib/sanity.queries'
+import { Post, Settings, postSlugsQuery } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
 import { lazy } from 'react'
 

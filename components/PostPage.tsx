@@ -10,6 +10,7 @@ import SectionSeparator from 'components/SectionSeparator'
 import * as demo from 'lib/demo.data'
 import type { Post, Settings } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
+import { DiscussionEmbed } from 'disqus-react'
 
 export interface PostPageProps {
   preview?: boolean
@@ -29,6 +30,14 @@ export default function PostPage(props: PostPageProps) {
 
   if (!slug && !preview) {
     notFound()
+  }
+
+  const disqusShortname = 'ferryops'
+
+  const disqusConfig = {
+    url: `https://ferryops.vercel.app/posts/${slug}`,
+    identifier: post?.slug, // Single post id
+    title: post?.title, // Single post title
   }
 
   return (
@@ -51,6 +60,10 @@ export default function PostPage(props: PostPageProps) {
                 />
                 <PostBody content={post.content} />
               </article>
+              <DiscussionEmbed
+                shortname={disqusShortname}
+                config={disqusConfig}
+              />
               <SectionSeparator />
               {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
             </>
