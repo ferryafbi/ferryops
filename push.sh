@@ -8,6 +8,6 @@ pesan_commit="new post ($tanggal $waktu)"
 
 npm run build
 git add .
-git commit -m "$pesan_commit"
-# git commit -m "test sh"
+# git commit -m "$pesan_commit"
+git commit -m "add disqus"
 git push
