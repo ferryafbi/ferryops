@@ -10,9 +10,6 @@ export default function MyHeader() {
           <Link href="/">Home</Link>
         </h1>
         <h1>
-          <Link href="/posts">Posts</Link>
-        </h1>
-        <h1>
           <Link href="/apps">Apps</Link>
         </h1>
         <h1>
