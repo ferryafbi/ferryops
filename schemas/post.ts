@@ -43,7 +43,20 @@ export default defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        {
+          type: 'block',
+        },
+        {
+          name: 'code',
+          title: 'Code Block',
+          type: 'code',
+          options: {
+            withFilename: false, // optional
+            highlightedLines: false, // optional
+          },
+        },
+      ],
     }),
     defineField({
       name: 'excerpt',
