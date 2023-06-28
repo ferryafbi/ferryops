@@ -48,13 +48,9 @@ export default defineType({
           type: 'block',
         },
         {
+          type: 'code',
           name: 'code',
           title: 'Code Block',
-          type: 'code',
-          options: {
-            withFilename: false, // optional
-            highlightedLines: false, // optional
-          },
         },
       ],
     }),

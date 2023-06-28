@@ -10,11 +10,24 @@
 import { PortableText } from '@portabletext/react'
 
 import styles from './PostBody.module.css'
+import SyntaxHighlighter from 'react-syntax-highlighter'
 
 export default function PostBody({ content }) {
+  const serializers = {
+    types: {
+      code: ({ value }: any) => (
+        <div className="my-2" key={value.key}>
+          <SyntaxHighlighter language={value.language}>
+            {value.code}
+          </SyntaxHighlighter>
+        </div>
+      ),
+    },
+  }
+
   return (
     <div className={`mx-auto max-w-2xl ${styles.portableText}`}>
-      <PortableText value={content} />
+      <PortableText value={content} components={serializers} />
     </div>
   )
 }
