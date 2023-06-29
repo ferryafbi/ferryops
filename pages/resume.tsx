@@ -94,7 +94,7 @@ export default function Resume({ userAgent }: ResumeProps) {
         <meta property="og:description" content="ferryops | resume" />
         <meta
           property="og:image"
-          content="https://ferryops.vercel.app/img/ferry.webp"
+          content="https://ferryops.vercel.app/img/ferry.jfif"
         />
         <meta property="og:url" content="https://ferryops.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -105,7 +105,7 @@ export default function Resume({ userAgent }: ResumeProps) {
           <div className={styles['main']}>
             <Image
               alt="image"
-              src="https://media.licdn.com/dms/image/D5603AQHnIrHj0bKwkg/profile-displayphoto-shrink_200_200/0/1685506674738?e=1691625600&v=beta&t=skvZVv_PdWUygOvAsNL01bRz4NNtK5ZHx8nCU7OoWm0"
+              src="https://media.licdn.com/dms/image/D5603AQFUEmyJEIoN5A/profile-displayphoto-shrink_400_400/0/1687662545967?e=1693440000&v=beta&t=-YVpK3cT4nMgZnSQ_HP0p0wyJ65-oxGJV_xohhJq6Dk"
               width={200}
               height={200}
               className={styles['profile']}
