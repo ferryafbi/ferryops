@@ -24,7 +24,7 @@ export default function PostBody({ content }) {
               text={value.code}
               onCopy={() => alert('udah disalin bang')}
             >
-              <BiCopy />
+              <BiCopy className='cursor-pointer'/>
             </CopyToClipboard>
           </div>
           <SyntaxHighlighter language={value.language}>
