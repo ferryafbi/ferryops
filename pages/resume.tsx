@@ -78,7 +78,21 @@ export default function Resume({ userAgent }: ResumeProps) {
     fetchQuote()
   }
 
-  const { browser, os, cpu } = parseUserAgent(userAgent)
+  const [browser, setBrowser] = useState('')
+  const [osName, setOsName] = useState('')
+  const [cpuArchitecture, setCpuArchitecture] = useState('')
+
+  useEffect(() => {
+    async function fetchData() {
+      const result = await parseUserAgent(userAgent)
+      const { browser, os, cpu } = result
+      setBrowser(browser.name)
+      setOsName(os.name)
+      setCpuArchitecture(cpu.architecture)
+    }
+
+    fetchData()
+  }, [])
 
   return (
     <>
@@ -100,7 +114,7 @@ export default function Resume({ userAgent }: ResumeProps) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className={styles['container']}>
-        <MyHeader/>
+        <MyHeader />
         <main>
           <div className={styles['main']}>
             <Image
@@ -120,14 +134,11 @@ export default function Resume({ userAgent }: ResumeProps) {
             </h2>
             <span>
               Kamu pakai browser{' '}
-              <span className={styles['underline']}>{browser.name}</span> dengan
+              <span className={styles['underline']}>{browser}</span> dengan
               sistem operasi{' '}
-              <span className={styles['underline']}>{os.name}</span> dan
+              <span className={styles['underline']}>{osName}</span> dan
               arsitektur{' '}
-              <span className={styles['underline']}>
-                {cpu.architecture || 'yo nda tau'}
-              </span>
-              .
+              <span className={styles['underline']}>{cpuArchitecture}</span>.
             </span>
           </div>
           <div className={styles.tech}>

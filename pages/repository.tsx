@@ -21,7 +21,7 @@ export default function Repository() {
   }, [])
 
   return (
-    <>
+    <div className={styles['container']}>
       <MyHeader />
 
       <div className={styles['main-github']}>
@@ -42,6 +42,6 @@ export default function Repository() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
