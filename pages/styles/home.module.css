@@ -130,6 +130,7 @@
   cursor: pointer;
   height: auto;
   width: 100%;
+  text-align: center;
 }
 .underline {
   text-decoration: underline;

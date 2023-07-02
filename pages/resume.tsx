@@ -47,7 +47,7 @@ export default function Resume({ userAgent }: ResumeProps) {
     }
 
     fetchData()
-  })
+  }, [userAgent])
 
   const experiences = [
     {
@@ -128,7 +128,11 @@ export default function Resume({ userAgent }: ResumeProps) {
               dengan sekali klik mouse
             </h2>
             <h2 className={styles.quotes} onClick={changeQuotes}>
-              Quotes of the Day: &quot;{quote}&quot;
+              {quote}
+              <br />
+              <span className="text-sm">
+                Random quotes from https://zenquotes.io/api/quotes/
+              </span>
             </h2>
             <span>
               Kamu pakai browser{' '}
