@@ -37,7 +37,17 @@ export default function Resume({ userAgent }: ResumeProps) {
     }
 
     fetchQuote()
-  }, [])
+
+    async function fetchData() {
+      const result = await parseUserAgent(userAgent)
+      const { browser, os, cpu } = result
+      setBrowser(browser.name)
+      setOsName(os.name)
+      setCpuArchitecture(cpu.architecture)
+    }
+
+    fetchData()
+  })
 
   const experiences = [
     {
@@ -81,18 +91,6 @@ export default function Resume({ userAgent }: ResumeProps) {
   const [browser, setBrowser] = useState('')
   const [osName, setOsName] = useState('')
   const [cpuArchitecture, setCpuArchitecture] = useState('')
-
-  useEffect(() => {
-    async function fetchData() {
-      const result = await parseUserAgent(userAgent)
-      const { browser, os, cpu } = result
-      setBrowser(browser.name)
-      setOsName(os.name)
-      setCpuArchitecture(cpu.architecture)
-    }
-
-    fetchData()
-  }, [])
 
   return (
     <>
